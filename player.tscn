@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsioxsm6cy0x7"]
+
+[ext_resource type="Script" uid="uid://m224ij8gj6hp" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vonw3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oi3di"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4flbx"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "camera")]
+script = ExtResource("1_4flbx")
+camera_pivot = NodePath("Head")
+camera = NodePath("Head/Camera3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vonw3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_oi3di")
+
+[node name="Head" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -2)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_4flbx")
