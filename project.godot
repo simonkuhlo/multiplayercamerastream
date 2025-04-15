@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="MultiplayerCameraStream"
-run/main_scene="uid://t601d3601ifk"
+run/main_scene="uid://co3nu1w5lqt0k"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Game_Root="*res://game_root.tscn"
 
 [input]
 

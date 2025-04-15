@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://h6o8ggqurfcy"]
+
+[ext_resource type="Script" uid="uid://cb65cukq3ah7i" path="res://Lobby/lobby_player_visualizer.gd" id="1_gwa0s"]
+
+[node name="PlayerVisualizer" type="HBoxContainer"]
+custom_minimum_size = Vector2(90, 30)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.046
+offset_bottom = 0.191998
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwa0s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hallo"
+vertical_alignment = 1
