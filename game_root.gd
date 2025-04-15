@@ -5,8 +5,6 @@ extends Node
 @export var user_space:UserSpace
 @export var multiplayer_logic:MultiplayerLogic
 
-func _ready() -> void:
-	to_main_menu()
 
 func to_lobby() -> void:
 	user_space.switch_scene(lobby_scene.instantiate())

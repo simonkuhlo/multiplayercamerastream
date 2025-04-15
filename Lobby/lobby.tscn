@@ -40,9 +40,3 @@ offset_right = 355.0
 offset_bottom = -0.104034
 script = ExtResource("1_1qw4d")
 player_visualizer = ExtResource("2_k4in3")
-
-[node name="PlayerVisualizer" parent="PlayerList" instance=ExtResource("2_k4in3")]
-layout_mode = 2
-
-[node name="PlayerVisualizer2" parent="PlayerList" instance=ExtResource("2_k4in3")]
-layout_mode = 2
