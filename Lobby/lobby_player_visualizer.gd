@@ -8,9 +8,6 @@ var player_info:MultiplayerClientInfo:
 		player_info = new_player_info
 		name_label.text = player_info.name
 
-func _init(new_player_info:MultiplayerClientInfo) -> void:
-	player_info = new_player_info
-
 func _ready() -> void:
 	if name_label not in get_children():
 		add_child(name_label)

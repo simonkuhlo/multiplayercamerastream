@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dcopa5aduac5t"]
+[gd_scene load_steps=2 format=3 uid="uid://dcopa5aduac5t"]
+
+[ext_resource type="Script" uid="uid://ddwhiwxfs8qmc" path="res://Lobby/main_menu.gd" id="1_l11t3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l11t3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -29,3 +32,6 @@ text = "Join"
 [node name="HostButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Horst"
+
+[connection signal="pressed" from="VBoxContainer/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HostButton" to="." method="_on_host_button_pressed"]

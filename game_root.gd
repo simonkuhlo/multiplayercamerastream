@@ -1,10 +1,9 @@
 extends Node
-class_name GameRoot
 
 @export var main_menu_scene:PackedScene
 @export var lobby_scene:PackedScene
 @export var user_space:UserSpace
-@export var multiplayer_lobby:MultiplayerLobby
+@export var multiplayer_logic:MultiplayerLogic
 
 func _ready() -> void:
 	to_main_menu()
