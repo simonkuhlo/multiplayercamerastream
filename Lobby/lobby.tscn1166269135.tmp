@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://5pashej8ttwl"]
+
+[ext_resource type="Script" uid="uid://vnr5p0kuh5q5" path="res://Lobby/player_list.gd" id="1_1qw4d"]
+[ext_resource type="PackedScene" uid="uid://h6o8ggqurfcy" path="res://Lobby/player_visualizer.tscn" id="2_k4in3"]
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerList" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.673
+offset_right = 355.0
+offset_bottom = -0.104034
+script = ExtResource("1_1qw4d")
+player_visualizer = ExtResource("2_k4in3")

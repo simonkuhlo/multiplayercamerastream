@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cb65cukq3ah7i" path="res://Lobby/lobby_player_visualizer.gd" id="1_gwa0s"]
 
-[node name="PlayerVisualizer" type="HBoxContainer"]
+[node name="PlayerVisualizer" type="HBoxContainer" node_paths=PackedStringArray("name_label", "color_rect")]
 custom_minimum_size = Vector2(90, 30)
 anchors_preset = -1
 anchor_right = 1.0
@@ -11,10 +11,13 @@ offset_bottom = 0.191998
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gwa0s")
+name_label = NodePath("Label")
+color_rect = NodePath("ColorRect")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+color = Color(0.494039, 0.853022, 0.915092, 1)
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(60, 30)

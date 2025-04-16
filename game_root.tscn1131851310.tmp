@@ -1,34 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://ba2fayr6kl713"]
+[gd_scene load_steps=8 format=3 uid="uid://ba2fayr6kl713"]
 
 [ext_resource type="Script" uid="uid://c13ymgcjl6cro" path="res://game_root.gd" id="1_0o8ui"]
 [ext_resource type="PackedScene" uid="uid://dcopa5aduac5t" path="res://Lobby/main_menu.tscn" id="2_8gxew"]
 [ext_resource type="PackedScene" uid="uid://5pashej8ttwl" path="res://Lobby/lobby.tscn" id="3_ledqy"]
-[ext_resource type="Script" uid="uid://cwv3b0s7axf1n" path="res://multiplayer_pre_lobby.gd" id="4_6t5o2"]
+[ext_resource type="Script" uid="uid://cwv3b0s7axf1n" path="res://multiplayer_lobby.gd" id="4_6t5o2"]
 [ext_resource type="Script" uid="uid://c3cplra2umk51" path="res://lobby.gd" id="6_8gxew"]
 [ext_resource type="Script" uid="uid://rueuvwysdath" path="res://user_space.gd" id="6_krhou"]
 [ext_resource type="Script" uid="uid://6doi17i1qio6" path="res://player_info.gd" id="6_ledqy"]
 
-[sub_resource type="Resource" id="Resource_8gxew"]
-script = ExtResource("6_ledqy")
-player_name = "Stranger"
-player_role = 2
-metadata/_custom_type_script = "uid://6doi17i1qio6"
-
-[node name="Game" type="Node" node_paths=PackedStringArray("user_space", "multiplayer_pre_lobby")]
+[node name="Game" type="Node" node_paths=PackedStringArray("user_space", "multiplayer_logic")]
 script = ExtResource("1_0o8ui")
 main_menu_scene = ExtResource("2_8gxew")
 lobby_scene = ExtResource("3_ledqy")
 user_space = NodePath("UserSpace")
-multiplayer_pre_lobby = NodePath("MultiplayerLogic")
+multiplayer_logic = NodePath("MultiplayerLogic")
 
-[node name="MultiplayerLogic" type="Node" parent="." node_paths=PackedStringArray("lobby")]
+[node name="MultiplayerLogic" type="Node" parent="." node_paths=PackedStringArray("lobby", "player_info")]
 script = ExtResource("4_6t5o2")
 lobby = NodePath("Lobby")
+player_info = NodePath("PlayerInfo")
 metadata/_custom_type_script = "uid://cwv3b0s7axf1n"
 
 [node name="Lobby" type="Node" parent="MultiplayerLogic"]
 script = ExtResource("6_8gxew")
-own_info = SubResource("Resource_8gxew")
+
+[node name="PlayerInfo" type="Node" parent="MultiplayerLogic"]
+script = ExtResource("6_ledqy")
 
 [node name="UserSpace" type="Node" parent="."]
 script = ExtResource("6_krhou")

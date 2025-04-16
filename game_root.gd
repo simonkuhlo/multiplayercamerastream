@@ -3,7 +3,7 @@ extends Node
 @export var main_menu_scene:PackedScene
 @export var lobby_scene:PackedScene
 @export var user_space:UserSpace
-@export var multiplayer_logic:MultiplayerLogic
+@export var multiplayer_pre_lobby:MultiplayerPreLobby
 
 
 func to_lobby() -> void:
